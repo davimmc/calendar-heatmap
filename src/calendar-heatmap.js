@@ -15,17 +15,17 @@ function calendarHeatmap() {
   var max = null;
   var colorRange = ['#D8E6E7', '#218380'];
   var tooltipEnabled = true;
-  var tooltipUnit = 'contribution';
+  var tooltipUnit = 'Contribui';
   var legendEnabled = true;
   var onClick = null;
   var weekStart = 0; //0 for Sunday, 1 for Monday
   var locale = {
-    months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    No: 'No',
-    on: 'on',
-    Less: 'Less',
-    More: 'More'
+    months: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    days: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+    No: 'Sem',
+    on: 'em',
+    Less: 'Menos',
+    More: 'Mais'
   };
 
   // setters and getters
@@ -178,7 +178,7 @@ function calendarHeatmap() {
 
         legendGroup.append('text')
           .attr('class', 'calendar-heatmap-legend-text calendar-heatmap-legend-text-less')
-          .attr('x', width - legendWidth - 13)
+          .attr('x', width - legendWidth - 20)
           .attr('y', height + SQUARE_LENGTH)
           .text(locale.Less);
 
@@ -224,7 +224,7 @@ function calendarHeatmap() {
 
     function pluralizedTooltipUnit (count) {
       if ('string' === typeof tooltipUnit) {
-        return (tooltipUnit + (count === 1 ? '' : 's'));
+        return (tooltipUnit + (count === 1 ? 'ção' : 'ções'));
       }
       for (var i in tooltipUnit) {
         var _rule = tooltipUnit[i];

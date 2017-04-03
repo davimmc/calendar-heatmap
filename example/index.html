@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../src/calendar-heatmap.css">
   </head>
   <body>
+    <br><br>agora<br>
     <div class="container"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -20,13 +21,13 @@
       });
 
       var heatmap = calendarHeatmap()
-                      .data(chartData)
-                      .selector('.container')
-                      .tooltipEnabled(true)
-                      .colorRange(['#f4f7f7', '#79a8a9'])
-                      .onClick(function (data) {
-                        console.log('data', data);
-                      });
+                    .data(chartData)
+                    .selector('.container')
+                    .tooltipEnabled(true)
+                    .colorRange(['#f4f7f7', '#79a8a9'])
+                    .onClick(function (data) {
+                      console.log('data', data);
+                    });
       heatmap();  // render the chart
     </script>
   </body>
